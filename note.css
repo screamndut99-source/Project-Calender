@@ -1,0 +1,337 @@
+/* =========================
+   Global & Reset
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #1f2937 100%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Background animated elements */
+.background-elements {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.blob-1 {
+    top: 25%;
+    left: 25%;
+    width: 256px;
+    height: 256px;
+    background: rgb(25, 112, 250);
+    animation: blob1 4s ease-in-out infinite;
+}
+
+.blob-2 {
+    bottom: 25%;
+    right: 25%;
+    width: 320px;
+    height: 320px;
+    background: rgba(146, 51, 234, 0.897);
+    animation: blob2 3s ease-in-out infinite 1s;
+}
+
+@media (max-width: 600px) {
+  .blob-1 {
+    width: 180px;
+    height: 180px;
+  }
+  .blob-2 {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .blob-1 {
+        background: rgb(25, 112, 250);
+    }
+
+    .blob-2 {
+        background: rgba(146, 51, 234, 0.897);
+    }
+}
+
+@keyframes blob1 {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+@keyframes blob2 {
+
+    0%,
+    100% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+}
+
+/* Floating particles */
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(147, 196, 253, 0.808);
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+    .particle {
+        background: rgba(147, 196, 253, 0.808);
+    }
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    top: 80%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+    left: 60%;
+    top: 10%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(4) {
+    left: 80%;
+    top: 60%;
+    animation-delay: 0.5s;
+}
+
+.particle:nth-child(5) {
+    left: 70%;
+    top: 30%;
+    animation-delay: 1.5s;
+}
+
+.particle:nth-child(6) {
+    left: 30%;
+    top: 70%;
+    animation-delay: 2.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(20px);
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2195f325;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #1976D2;
+}
+
+@media (max-width: 600px) {
+    .controls button {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+
+/* =========================
+   Notes List
+   ========================= */
+#noteList {
+    margin: 15px 0;
+}
+
+/* Note item styling */
+.note-item {
+    background: rgba(255, 235, 160, 0.2);
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1.5px solid #000000;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Tanggal note */
+.note-date {
+    font-weight: bold;
+    color: goldenrod;
+}
+
+/* Pasaran Jawa */
+.note-pasaran {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: goldenrod;
+}
+
+/* Isi catatan */
+.note-text {
+    color: whitesmoke;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .note-item {
+    margin-bottom: 12px;
+    padding: 12px;
+  }
+}
+
+/* Tombol hapus */
+.delete-btn {
+    background: #e53935;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+}
+
+/* =========================
+   Mobile Friendly
+   ========================= */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .note-item {
+        padding: 10px;
+    }
+
+    .note-date {
+        font-size: 0.95rem;
+    }
+
+    .note-pasaran {
+        font-size: 0.85rem;
+    }
+
+    .note-text {
+        font-size: 0.9rem;
+    }
+
+    .delete-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+
+.add-note {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#noteDate {
+    margin-top: 20px;
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#noteContent {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+#addNoteBtn {
+    width: 150px;
+    align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+    #addNoteBtn {
+        width: 100%;
+        align-self: stretch;
+        font-size: 1rem;
+    }
+}

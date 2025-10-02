@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Kalender</title>
+    <link rel="stylesheet" href="note.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1f2937">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon.png">
+
+</head>
+
+<body>
+
+    <h2>Daftar Catatan</h2>
+
+    <!-- Tombol kembali ke kalender -->
+    <div class="controls">
+        <button onclick="goBack()">⬅️ Kembali</button>
+
+        <!-- Animated background -->
+        <div class="background-elements">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+
+        <!-- Floating particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="add-note">
+            <input type="date" id="noteDate">
+            <textarea id="noteContent" placeholder="Tulis catatan baru..."></textarea>
+            <button id="addNoteBtn">Tambah Catatan</button>
+        </div>
+
+        <!-- Container catatan -->
+        <div id="noteList" class="note-list"></div>
+
+        <script src="note.js"></script>
+</body>
+
+</html>
